@@ -8,4 +8,18 @@ function countToTen(num, counts) {
 	console.log(a);
 	return countToTen(num - 1, counts);
 }
-console.log(countToTen(5, 1));
+console.log(countToTen(10, 1));
+
+// create a recursive function that counts down from ten
+
+function countDown(num) {
+	let counts = num;
+	if (num === 1) {
+		return counts;
+	}
+	counts--;
+
+	return countDown(num - 1);
+}
+
+console.log(countDown(10));
