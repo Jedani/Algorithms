@@ -6,6 +6,6 @@ function countToTen(num, counts) {
 	}
 	let a = counts++;
 	console.log(a);
-	return countToTen(num - 1, counts++);
+	return countToTen(num - 1, counts);
 }
-console.log(countToTen(10, 1));
+console.log(countToTen(5, 1));
