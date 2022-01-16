@@ -12,7 +12,7 @@ function quickSort(data, start, end) {
 
 	// function swap(arr, a, b) {
 	// 	let temp = arr[a];
-	// 	arr[b] = arr[a];
+	// 	arr[a] = arr[b];
 	// 	arr[b] = temp;
 	// }
 	function partition(data, start, end) {
