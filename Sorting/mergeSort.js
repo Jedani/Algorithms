@@ -40,5 +40,5 @@ function mergeSort(data, start, end) {
 	return data;
 }
 
-let array = [-5, 20, 10, 3, 9, 1];
+let array = [4, 75, 74, 2, 54];
 console.log(mergeSort(array, 0, array.length - 1));
