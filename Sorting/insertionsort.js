@@ -3,7 +3,7 @@ function insertionSort(data) {
 		return data;
 	}
 
-	unsorted = 1;
+	let unsorted = 1;
 
 	while (unsorted < data.length) {
 		let temp = data[unsorted];
