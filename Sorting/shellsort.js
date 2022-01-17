@@ -14,7 +14,7 @@ function shellSort(data) {
 
 			while (i >= 0 && temp < data[i]) {
 				data[i + increase] = data[i];
-				i = i - increase;
+				i == increase;
 			}
 
 			data[i + increase] = temp;
