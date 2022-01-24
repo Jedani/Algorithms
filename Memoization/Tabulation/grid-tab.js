@@ -4,7 +4,7 @@ const gridTraveller = (m, n) => {
 		.map(() => Array(n + 1).fill(0));
 
 	table[1][1] = 1;
-	console.log(table);
+
 	for (let i = 0; i <= m; i++) {
 		for (let j = 0; j <= n; j++) {
 			const current = table[i][j];
@@ -16,7 +16,7 @@ const gridTraveller = (m, n) => {
 			}
 		}
 	}
-
+	console.log(table);
 	return table[m][n];
 };
 
