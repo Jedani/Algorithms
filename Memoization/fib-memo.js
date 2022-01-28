@@ -9,4 +9,4 @@ function fibonnaci(n, memo = {}) {
 	return memo[n];
 }
 
-console.log(fibonnaci(70));
+console.log(fibonnaci(25));

@@ -4,9 +4,9 @@ const fib = (n) => {
 	for (let i = 0; i <= n; i++) {
 		table[i + 1] += table[i];
 		table[i + 2] += table[i];
+		// table[i + 3] += table[i];
 	}
-	console.log(table);
 	return table[n];
 };
 
-console.log(fib(12));
+console.log(fib(25));

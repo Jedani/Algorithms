@@ -2,7 +2,6 @@ const bestSum = (target, numbers) => {
 	const table = Array(target + 1).fill(null);
 
 	table[0] = [];
-	console.log(table);
 
 	for (let i = 0; i <= target; i++) {
 		if (table[i] !== null) {
