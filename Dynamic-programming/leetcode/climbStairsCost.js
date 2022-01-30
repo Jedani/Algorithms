@@ -1,13 +1,15 @@
 const minCostClimbingStairs = (cost) => {
-	function recurse(a, n) {
+	function recurse(a, n, memo = {}) {
+		if (n in memo) return memo[n];
 		if (n >= a.length) {
 			return 0;
 		}
 
-		let ls = recurse(a, n + 1);
-		let rs = recurse(a, n + 2);
+		let ls = recurse(a, n + 1, memo);
+		let rs = recurse(a, n + 2, memo);
 
-		return Math.min(ls, rs) + a[n];
+		memo[n] = Math.min(ls, rs) + a[n];
+		return memo[n];
 	}
 
 	return Math.min(recurse(cost, 0), recurse(cost, 1));
