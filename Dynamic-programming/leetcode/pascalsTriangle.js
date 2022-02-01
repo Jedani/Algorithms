@@ -17,4 +17,4 @@ const generate = (numRows) => {
 	return result;
 };
 
-console.log(generate(3));
+console.log(generate(5));
