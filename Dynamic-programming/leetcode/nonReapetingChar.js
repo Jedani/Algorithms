@@ -1,14 +1,16 @@
 const firstUniqChar = function (s) {
-	let store = {};
+	let temp = [];
+	let store = new Map();
 	for (const letter of s) {
-		if (store[letter]) {
-			store[letter]++;
-		} else {
-			store[letter] = 1;
-		}
+		store.set(letter, (store.get(letter) || 0) + 1);
 	}
-	let a = Object.keys(store).find((key) => store[key] === 1);
-	return s.indexOf(a);
+	store.forEach(function (value, key) {
+		if (value == 1) {
+			temp.push(key);
+		}
+	});
+	let a = s.indexOf(temp[0]);
+	return a;
 };
 
 console.log(firstUniqChar("leetcode"));
