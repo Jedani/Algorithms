@@ -16,7 +16,7 @@ const canConstruct = (target, wordbank, memo = {}) => {
 	return false;
 };
 
-console.log(canConstruct("allan", ["a", "n", "l"]));
+console.log(canConstruct("aa", ["aa"]));
 console.log(
 	canConstruct(
 		"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeg",
