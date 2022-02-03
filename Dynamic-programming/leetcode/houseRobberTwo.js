@@ -16,3 +16,7 @@ var rob = function (nums) {
 	};
 	return Math.max(robHouse(0, nums.length - 1), robHouse(1, nums.length));
 };
+
+console.log(
+	rob([1, 2, 3, 1, 3, 4, 6, 3, 134, 5, 8, 3, 7, 89, 4, 3, 7, 9, 4, 7, 1]),
+);
