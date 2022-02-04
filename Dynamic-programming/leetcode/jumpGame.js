@@ -20,7 +20,7 @@
 
 // console.log(canJump([0, 1]));
 
-// OR
+// OR PEAK FINDING
 
 var canJump = function (nums) {
 	let n = nums.length;
