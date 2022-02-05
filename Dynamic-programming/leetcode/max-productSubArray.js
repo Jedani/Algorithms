@@ -10,6 +10,7 @@ var maxProduct = function (nums) {
 		currMin = Math.min(nums[i], Math.min(copied * nums[i], currMin * nums[i]));
 		result = Math.max(currMax, result);
 	}
+
 	return result;
 };
 
