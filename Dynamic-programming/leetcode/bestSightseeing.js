@@ -9,3 +9,4 @@ var maxScoreSightseeingPair = function (values) {
 };
 
 console.log(maxScoreSightseeingPair([8, 1, 5, 2, 6]));
+console.log(maxScoreSightseeingPair([1]));
