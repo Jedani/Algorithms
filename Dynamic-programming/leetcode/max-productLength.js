@@ -25,4 +25,5 @@ var getMaxLen = function (nums) {
 	return max;
 };
 
-console.log(getMaxLen([1, -2, -3, 4]));
+// console.log(getMaxLen([1, -2, -3, 4]));
+console.log(getMaxLen([1, -2, -3, 0, 1, 2, -1, -2, 5, 0, 1, 5, 2, 4]));
