@@ -12,7 +12,6 @@ var wordBreak = function (s, wordDict, memo = {}) {
 		}
 	}
 	memo[s] = false;
-
 	return false;
 };
 
