@@ -17,5 +17,5 @@ var wordBreak = function (s, wordDict, memo = {}) {
 };
 
 console.log(wordBreak("leetcode", ["leet", "code"]));
-console.log(wordBreak("catsandog", ["cats", "dog", "sand", "and", "cat"]));
+console.log(wordBreak("catsandog", ["cat", "og", "sand", "and", "cats"]));
 console.log(wordBreak("applepenapple", ["apple", "pen"]));
