@@ -33,7 +33,7 @@ const maxProfit = (prices) => {
 
 	for (let i = 1; i < prices.length; i++) {
 		if (buy > prices[i]) {
-			buy = price[i];
+			buy = prices[i];
 			prices[i] = 0;
 		} else {
 			profit = Math.max(profit, prices[i] + buy);
