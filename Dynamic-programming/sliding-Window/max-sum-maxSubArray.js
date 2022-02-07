@@ -17,5 +17,5 @@ const maxSubArray = (nums, size) => {
 	return max;
 };
 
-// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4], 5));
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4], 5));
 console.log(maxSubArray([4, 2, 1, 7, 8, 1, 2, 8, 1, 0], 3));
