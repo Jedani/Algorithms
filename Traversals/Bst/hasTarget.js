@@ -1,17 +1,34 @@
-var searchBST = function (root, val) {
-	if (root == null) return [];
-	const result = [];
-	const queue = [root];
-	while (queue.length) {
-		let len = queue.length;
-		result.push(queue.map((pointer) => pointer.val));
-		while (len--) {
-			let pointer = queue.shift();
-			if (pointer.left !== null) queue.push(pointer.left);
-			if (pointer.right !== null) queue.push(pointer.right);
-		}
+class Node {
+	constructor(val) {
+		this.val = val;
+		this.left = null;
+		this.right = null;
 	}
-	return result;
-};
+}
+const a = new Node(4);
+const b = new Node(2);
+const c = new Node(7);
+const d = new Node(1);
+const f = new Node(3);
 
-console.log(searchBST([4, 2, 7, 1, 3], 2));
+a.left = b;
+a.right = c;
+b.right = f;
+// b.left = d;
+
+var searchBST = function (root, val) {
+	let stack = [root];
+	let res = [];
+
+	while (stack.length) {
+		let pointer = stack.shift();
+		if (pointer.val == val) {
+			res.push(pointer.val);
+			// add some if statements
+		}
+		if (pointer.left !== null) stack.push(pointer.left);
+		if (pointer.right !== null) stack.push(pointer.right);
+	}
+	return res;
+};
+console.log(searchBST(a, 2));
