@@ -1,6 +1,6 @@
 var numTrees = function (n) {
-	let mem = Array(n + 1);
-	(mem[1] = 1), (mem[2] = 2);
+	let mem = Array(n);
+	(mem[0] = 1), (mem[1] = 2);
 	function f(n) {
 		if (n <= 1) return 1;
 		if (n == 2) return 2;
