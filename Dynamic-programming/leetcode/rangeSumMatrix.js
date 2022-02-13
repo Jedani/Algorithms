@@ -1,36 +1,46 @@
-var NumMatrix = function (matrix) {
-	let n = matrix.length;
-	if (n == 0) return;
-	let m = matrix[0].length;
-
-	for (let i = 0; i < n; i++) {
-		for (let j = 0; j < m; j++) {
-			let sum = 0;
-			if (i > 0) sum += matrix[i - 1][j];
-			if (j > 0) sum += matrix[i][j - 1];
-			if (i > 0 && j > 0) sum -= matrix[i - 1][j - 1];
-			matrix[i][j] += sum;
-		}
+class NumMatrix {
+	constructor(matrix) {
+		this.matrix = matrix;
 	}
-	this.matrix = matrix;
-};
-NumMatrix.prototype.sumRegion = function (row1, col1, row2, col2) {
-	let matrix = this.matrix;
-	let res = matrix[row2][col2];
 
-	if (row1 > 0) res -= matrix[row1 - 1][col2];
-	if (col1 > 0) res -= matrix[row2][col1 - 1];
-	if (row1 > 0 && col1 > 0) res += matrix[row1 - 1][col1 - 1];
+	boxMaker() {
+		const rows = matt.length,
+			cols = matt[0].length;
+		const sums = Array.from(matt, (row) => Array.from(row));
 
-	return res;
-};
+		// calc prefix sums
+		for (let row = 0; row < rows; row++) {
+			for (let col = 0; col < cols; col++) {
+				sums[row][col] +=
+					(sums[row][col - 1] ?? 0) + // left sum
+					(sums[row - 1]?.[col] ?? 0) - // top sum
+					(sums[row - 1]?.[col - 1] ?? 0); // diagonal sum
+			}
+		}
+		this.matrix = sums;
+	}
 
-let numMatrix = new NumMatrix([
+	sumRegion(row1, col1, row2, col2) {
+		let matrix = this.matrix;
+		let res = matrix[row2][col2];
+
+		if (row1 > 0) res -= matrix[row1 - 1][col2];
+		if (col1 > 0) res -= matrix[row2][col1 - 1];
+		if (row1 > 0 && col1 > 0) res += matrix[row1 - 1][col1 - 1];
+
+		return res;
+	}
+}
+
+let mat = new NumMatrix();
+let matt = [
 	[3, 0, 1, 4, 2],
 	[5, 6, 3, 2, 1],
 	[1, 2, 0, 1, 5],
 	[4, 1, 0, 1, 7],
 	[1, 0, 3, 0, 5],
-]);
-
-console.log(numMatrix);
+];
+mat.boxMaker(matt);
+console.log(mat.sumRegion(2, 1, 4, 3));
+console.log(mat.sumRegion(1, 1, 2, 2));
+console.log(mat.sumRegion(1, 2, 2, 4));
