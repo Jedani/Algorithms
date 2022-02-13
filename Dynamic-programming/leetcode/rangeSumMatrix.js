@@ -32,7 +32,6 @@ class NumMatrix {
 	}
 }
 
-let mat = new NumMatrix();
 let matt = [
 	[3, 0, 1, 4, 2],
 	[5, 6, 3, 2, 1],
@@ -40,6 +39,7 @@ let matt = [
 	[4, 1, 0, 1, 7],
 	[1, 0, 3, 0, 5],
 ];
+let mat = new NumMatrix();
 mat.boxMaker(matt);
 console.log(mat.sumRegion(2, 1, 4, 3));
 console.log(mat.sumRegion(1, 1, 2, 2));
