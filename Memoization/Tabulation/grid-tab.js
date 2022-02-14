@@ -16,7 +16,6 @@ const gridTraveller = (m, n) => {
 			}
 		}
 	}
-	console.log(table);
 	return table[m][n];
 };
 

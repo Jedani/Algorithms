@@ -16,7 +16,7 @@ const gridTraveller = (m, n, memo = {}) => {
 	return memo[key];
 };
 
-console.log(gridTraveller(20, 30));
+console.log(gridTraveller(30, 20));
 
 // OR
 
