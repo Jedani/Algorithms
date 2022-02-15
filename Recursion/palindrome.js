@@ -11,6 +11,27 @@ function palindrome(value) {
 	return false;
 }
 
-console.log(palindrome("kayak"));
-console.log(palindrome("siis"));
-console.log(palindrome("a"));
+// console.log(palindrome("kayak"));
+// console.log(palindrome("siis"));
+// console.log(palindrome("a"));
+
+// OR another WAY
+
+function palindrome(val) {
+	let leftPoint = 0,
+		rightPoint = val.length - 1;
+	console.log(val[rightPoint]);
+
+	while (leftPoint <= rightPoint) {
+		if (val[leftPoint] == val[rightPoint]) {
+			leftPoint++;
+			rightPoint--;
+		}
+		if (val[leftPoint] !== val[rightPoint]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+console.log(palindrome("bbbbbb"));
