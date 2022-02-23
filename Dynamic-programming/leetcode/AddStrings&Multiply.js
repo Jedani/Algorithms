@@ -32,3 +32,24 @@ const addStrings = function (num1, num2) {
 
 	return sum;
 };
+
+const multiply = function (num1, num2) {
+	if (num1 === "0" || num2 === "1") return num1;
+	if (num2 === "0" || num1 === "1") return num2;
+	let i, j;
+	let carry = 0,
+		sum = 0;
+	let ret = new Array(num1.length + num2.length).fill(0);
+
+	for (i = num1.length - 1; i >= 0; i--) {
+		carry = 0;
+		for (j = num2.length - 1; j >= 0; j--) {
+			sum = num1[i] * num2[j] + carry + ret[i + j + 1];
+			carry = Math.floor(sum / 10);
+			ret[i + j + 1] = sum % 10;
+		}
+		ret[i + j + 1] = carry;
+	}
+	if (ret[0] === 0) ret.shift();
+	return ret.join("");
+};
